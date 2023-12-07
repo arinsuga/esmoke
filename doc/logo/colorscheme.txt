@@ -1,0 +1,16 @@
+
+logo font: Rightous
+
+
+orange
+#ff851b
+
+darkblue
+#233565
+blue
+#297BBF
+
+grey
+#767373
+darkgrey
+#535151
