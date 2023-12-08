@@ -23,6 +23,8 @@ class CreateStatuspelaksanaanTable extends Migration
             $table->integer('status')->nullable();
 
             $table->timestamps();
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
         });
     }
 

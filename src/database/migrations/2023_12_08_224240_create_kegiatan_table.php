@@ -21,7 +21,7 @@ class CreateKegiatanTable extends Migration
             $table->bigInteger('subjenis2_id')->nullable();
             $table->bigInteger('koordinator_id')->nullable(); //diisi dengan employee id
 
-            $table->integer('statuskegiatan_id')->nullable(); //open,close,cancel,reject
+            $table->integer('statuskegiatan_id')->nullable(); //1=open,2=close,3=cancel,4=reject, 5=pending
             $table->integer('progress')->nullable(); //percentage
 
             $table->string('name')->nullable();
@@ -33,6 +33,8 @@ class CreateKegiatanTable extends Migration
             $table->dateTime('actual_startdt')->nullable();
             $table->dateTime('actual_enddt')->nullable();
 
+            $table->string('image')->nullable();
+            $table->integer("numsort")->nullable();
 
             $table->timestamps();
             $table->string('created_by')->nullable();

@@ -21,7 +21,7 @@ class CreatePelaksanaanTable extends Migration
             $table->bigInteger('subjenis1_id')->nullable();
             $table->bigInteger('subjenis2_id')->nullable();
 
-            $table->integer('statuspelaksanaan_id')->nullable(); //open,close,cancel,reject
+            $table->integer('statuspelaksanaan_id')->nullable(); //1=open,2=close,3=cancel,4=reject, 5=pending
             $table->integer('progress')->nullable(); //percentage
 
 

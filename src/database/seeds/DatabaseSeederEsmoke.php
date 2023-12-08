@@ -43,6 +43,8 @@ class DatabaseSeederEsmoke extends Seeder
         //esmoke
         $this->call('StatuskegiatanTableSeeder');
         $this->call('StatuspelaksanaanTableSeeder');
+        $this->call('KegiatanTableSeeder'); //data sample
+        $this->call('JenisTableSeeder'); //data sample
         
         //meetroom
         $this->call('OrderstatusTableSeeder');
