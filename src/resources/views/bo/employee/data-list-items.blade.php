@@ -22,8 +22,8 @@
                 <td>{{ $item->nik }}</td>
                 <td>{{ $item->noabsen }}</td>
                 <td>{{ $item->name }}</td>
-                <td>{{ $item->subdept->name }}</td>
-                <td>{{ $item->job->name }}</td>
+                <td>{{ ($item->subdept_id != '') ? $item->subdept->name : '' }}</td>
+                <td>{{ ($item->job != '') ? $item->job->name : '' }}</td>
                 <td>{{ $item->add_info1 }}</td>
             </tr>
         @endforeach

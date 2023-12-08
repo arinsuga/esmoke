@@ -56,7 +56,7 @@ margin-left: auto; margin-right:auto;">
       </div>
 
       <!-- text input:text -->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label>User ID</label>
         @if ($fieldEnabled == true)
           <select name="user_id" class="form-control select2">
@@ -85,7 +85,7 @@ margin-left: auto; margin-right:auto;">
 
       </div>
 
-      <hr>
+      <hr> -->
 
       <!-- input text -->
       <div class="form-group">
@@ -100,6 +100,7 @@ margin-left: auto; margin-right:auto;">
         <label>Departemen</label>
         @if ($fieldEnabled == true)
           <select name="subdept_id" class="form-control select2">
+                <option {{ $selected }} value="">&nbsp;</option>
                 @foreach ($subdept as $key => $item)
 
                   @if ($errors->any())
@@ -126,6 +127,7 @@ margin-left: auto; margin-right:auto;">
         <label>Jabatan</label>
         @if ($fieldEnabled == true)
           <select name="job_id" class="form-control select2">
+                <option {{ $selected }} value="">&nbsp;</option>
                 @foreach ($job as $key => $item)
 
                   @if ($errors->any())

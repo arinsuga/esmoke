@@ -95,8 +95,8 @@ class EmployeeRepository extends BaseRepository implements EmployeeRepositoryInt
             //job
             //'branch_id' => 'required',
             //'dept_id' => 'required',
-            'subdept_id' => 'required',
-            'job_id' => 'required',
+            // 'subdept_id' => 'required',
+            // 'job_id' => 'required',
             //personal 2
             //'gender_id' => 'required',
         ];
