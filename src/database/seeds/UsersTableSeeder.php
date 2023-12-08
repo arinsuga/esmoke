@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'id' => 1,
             'name' => 'System Admin',
-            'email' => 'sysadmin@hadiprana.co.id',
+            'email' => 'sysadmin@appdesk.tech',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
             'remember_token' => Str::random(10),
@@ -29,7 +29,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'id' => 2,
             'name' => 'Admin 1',
-            'email' => 'admin1@hadiprana.co.id',
+            'email' => 'admin1@appdesk.tech',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
             'remember_token' => Str::random(10),
@@ -39,7 +39,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'id' => 3,
             'name' => 'Admin 2',
-            'email' => 'admin2@hadiprana.co.id',
+            'email' => 'admin2@appdesk.tech',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
             'remember_token' => Str::random(10),
@@ -49,7 +49,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'id' => 4,
             'name' => 'Departemen Interior',
-            'email' => 'interior@hadiprana.co.id',
+            'email' => 'interior@appdesk.tech',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
             'remember_token' => Str::random(10),
@@ -58,7 +58,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'id' => 5,
             'name' => 'Departemen Arsitek',
-            'email' => 'arsitek@hadiprana.co.id',
+            'email' => 'arsitek@appdesk.tech',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
             'remember_token' => Str::random(10),
@@ -68,7 +68,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'id' => 6,
             'name' => 'Design and Build',
-            'email' => 'dnb@hadiprana.co.id',
+            'email' => 'dnb@appdesk.tech',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
             'remember_token' => Str::random(10),
@@ -79,7 +79,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'id' => 7,
             'name' => 'Departemen IT',
-            'email' => 'it@hadiprana.co.id',
+            'email' => 'it@appdesk.tech',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
             'remember_token' => Str::random(10),
@@ -90,7 +90,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'id' => 9,
             'name' => 'Departemen Keuangan',
-            'email' => 'keuangan@hadiprana.co.id',
+            'email' => 'keuangan@appdesk.tech',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
             'remember_token' => Str::random(10),
@@ -101,7 +101,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'id' => 10,
             'name' => 'Departemen Umum',
-            'email' => 'umum@hadiprana.co.id',
+            'email' => 'umum@appdesk.tech',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
             'remember_token' => Str::random(10),
