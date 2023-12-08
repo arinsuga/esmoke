@@ -1,6 +1,6 @@
 
-logo font: Rightous
-
+title font  : Rightous
+slogan font : Fira Sans Extra Condensed
 
 orange
 #ff851b

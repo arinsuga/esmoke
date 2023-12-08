@@ -2,7 +2,7 @@
   "id": "42296c06-139e-4e75-8d3e-f7ee6b009cf8",
   "version": "2.0",
   "name": "esmoke-test",
-  "url": "http://localhost/esmoke/bookpostmo-index-today",
+  "url": "https://esmoke.appdesk.tech/bookpostmo-index-today",
   "tests": [{
     "id": "c4a69793-5808-4397-98dc-f234f1c9a601",
     "name": "step1-postmo1.normal.budi",
@@ -10,7 +10,7 @@
       "id": "afc5f8e5-4c23-44e1-9f75-af909b7a819a",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookpostmo-index-today",
+      "target": "https://esmoke.appdesk.tech/bookpostmo-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -358,7 +358,7 @@
       "id": "a38debfc-e2de-49c3-99a8-6a30992a18a6",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookpostmo-index-today",
+      "target": "https://esmoke.appdesk.tech/bookpostmo-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -736,7 +736,7 @@
       "id": "36e0506e-b697-465c-8d45-9d34ac64f8d4",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookpostmo-index-today",
+      "target": "https://esmoke.appdesk.tech/bookpostmo-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -1102,7 +1102,7 @@
       "id": "4a13541e-0ae6-45e3-b0f9-9039fb81a297",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookpostmo-index-today",
+      "target": "https://esmoke.appdesk.tech/bookpostmo-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -1480,7 +1480,7 @@
       "id": "91ffc674-a6cf-44b8-af33-b0e938d1eb87",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookpostmo-index-today",
+      "target": "https://esmoke.appdesk.tech/bookpostmo-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -1589,7 +1589,7 @@
       "id": "ca5752a1-1b48-472c-ae55-31b44c6ba8a5",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookpostmo-index-today",
+      "target": "https://esmoke.appdesk.tech/bookpostmo-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -1967,7 +1967,7 @@
       "id": "4f30c89b-6865-4549-9cee-555e2a6d7636",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookpostmo-index-today",
+      "target": "https://esmoke.appdesk.tech/bookpostmo-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -2017,7 +2017,7 @@
         ["linkText=Cancel", "linkText"],
         ["css=.navbar-nav:nth-child(1) > .nav-item:nth-child(2) > .nav-link", "css:finder"],
         ["xpath=//a[contains(text(),'Cancel')]", "xpath:link"],
-        ["xpath=//a[@href='http://localhost/esmoke/bookpostmo-index-cancel']", "xpath:href"],
+        ["xpath=//a[@href='https://esmoke.appdesk.tech/bookpostmo-index-cancel']", "xpath:href"],
         ["xpath=//section/div/nav/ul/li[2]/a", "xpath:position"],
         ["xpath=//a[contains(.,'Cancel')]", "xpath:innerText"]
       ],
@@ -2042,7 +2042,7 @@
       "id": "afc5f8e5-4c23-44e1-9f75-af909b7a819a",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookfounder-index-today",
+      "target": "https://esmoke.appdesk.tech/bookfounder-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -2390,7 +2390,7 @@
       "id": "a38debfc-e2de-49c3-99a8-6a30992a18a6",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookfounder-index-today",
+      "target": "https://esmoke.appdesk.tech/bookfounder-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -2768,7 +2768,7 @@
       "id": "36e0506e-b697-465c-8d45-9d34ac64f8d4",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookfounder-index-today",
+      "target": "https://esmoke.appdesk.tech/bookfounder-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -3134,7 +3134,7 @@
       "id": "4a13541e-0ae6-45e3-b0f9-9039fb81a297",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookfounder-index-today",
+      "target": "https://esmoke.appdesk.tech/bookfounder-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -3512,7 +3512,7 @@
       "id": "91ffc674-a6cf-44b8-af33-b0e938d1eb87",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookfounder-index-today",
+      "target": "https://esmoke.appdesk.tech/bookfounder-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -3621,7 +3621,7 @@
       "id": "ca5752a1-1b48-472c-ae55-31b44c6ba8a5",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookfounder-index-today",
+      "target": "https://esmoke.appdesk.tech/bookfounder-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -3999,7 +3999,7 @@
       "id": "4f30c89b-6865-4549-9cee-555e2a6d7636",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookfounder-index-today",
+      "target": "https://esmoke.appdesk.tech/bookfounder-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -4049,7 +4049,7 @@
         ["linkText=Cancel", "linkText"],
         ["css=.navbar-nav:nth-child(1) > .nav-item:nth-child(2) > .nav-link", "css:finder"],
         ["xpath=//a[contains(text(),'Cancel')]", "xpath:link"],
-        ["xpath=//a[@href='http://localhost/esmoke/bookpostmo-index-cancel']", "xpath:href"],
+        ["xpath=//a[@href='https://esmoke.appdesk.tech/bookpostmo-index-cancel']", "xpath:href"],
         ["xpath=//section/div/nav/ul/li[2]/a", "xpath:position"],
         ["xpath=//a[contains(.,'Cancel')]", "xpath:innerText"]
       ],
@@ -4074,7 +4074,7 @@
       "id": "afc5f8e5-4c23-44e1-9f75-af909b7a819a",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookinterior-index-today",
+      "target": "https://esmoke.appdesk.tech/bookinterior-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -4422,7 +4422,7 @@
       "id": "a38debfc-e2de-49c3-99a8-6a30992a18a6",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookinterior-index-today",
+      "target": "https://esmoke.appdesk.tech/bookinterior-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -4800,7 +4800,7 @@
       "id": "36e0506e-b697-465c-8d45-9d34ac64f8d4",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookinterior-index-today",
+      "target": "https://esmoke.appdesk.tech/bookinterior-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -5166,7 +5166,7 @@
       "id": "4a13541e-0ae6-45e3-b0f9-9039fb81a297",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookinterior-index-today",
+      "target": "https://esmoke.appdesk.tech/bookinterior-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -5544,7 +5544,7 @@
       "id": "91ffc674-a6cf-44b8-af33-b0e938d1eb87",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookinterior-index-today",
+      "target": "https://esmoke.appdesk.tech/bookinterior-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -5653,7 +5653,7 @@
       "id": "ca5752a1-1b48-472c-ae55-31b44c6ba8a5",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookinterior-index-today",
+      "target": "https://esmoke.appdesk.tech/bookinterior-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -6031,7 +6031,7 @@
       "id": "4f30c89b-6865-4549-9cee-555e2a6d7636",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookinterior-index-today",
+      "target": "https://esmoke.appdesk.tech/bookinterior-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -6081,7 +6081,7 @@
         ["linkText=Cancel", "linkText"],
         ["css=.navbar-nav:nth-child(1) > .nav-item:nth-child(2) > .nav-link", "css:finder"],
         ["xpath=//a[contains(text(),'Cancel')]", "xpath:link"],
-        ["xpath=//a[@href='http://localhost/esmoke/bookpostmo-index-cancel']", "xpath:href"],
+        ["xpath=//a[@href='https://esmoke.appdesk.tech/bookpostmo-index-cancel']", "xpath:href"],
         ["xpath=//section/div/nav/ul/li[2]/a", "xpath:position"],
         ["xpath=//a[contains(.,'Cancel')]", "xpath:innerText"]
       ],
@@ -6106,7 +6106,7 @@
       "id": "afc5f8e5-4c23-44e1-9f75-af909b7a819a",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookbulat-index-today",
+      "target": "https://esmoke.appdesk.tech/bookbulat-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -6454,7 +6454,7 @@
       "id": "a38debfc-e2de-49c3-99a8-6a30992a18a6",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookbulat-index-today",
+      "target": "https://esmoke.appdesk.tech/bookbulat-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -6832,7 +6832,7 @@
       "id": "36e0506e-b697-465c-8d45-9d34ac64f8d4",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookbulat-index-today",
+      "target": "https://esmoke.appdesk.tech/bookbulat-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -7198,7 +7198,7 @@
       "id": "4a13541e-0ae6-45e3-b0f9-9039fb81a297",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookbulat-index-today",
+      "target": "https://esmoke.appdesk.tech/bookbulat-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -7576,7 +7576,7 @@
       "id": "91ffc674-a6cf-44b8-af33-b0e938d1eb87",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookbulat-index-today",
+      "target": "https://esmoke.appdesk.tech/bookbulat-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -7685,7 +7685,7 @@
       "id": "ca5752a1-1b48-472c-ae55-31b44c6ba8a5",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookbulat-index-today",
+      "target": "https://esmoke.appdesk.tech/bookbulat-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -8063,7 +8063,7 @@
       "id": "4f30c89b-6865-4549-9cee-555e2a6d7636",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/esmoke/bookbulat-index-today",
+      "target": "https://esmoke.appdesk.tech/bookbulat-index-today",
       "targets": [],
       "value": ""
     }, {
@@ -8113,7 +8113,7 @@
         ["linkText=Cancel", "linkText"],
         ["css=.navbar-nav:nth-child(1) > .nav-item:nth-child(2) > .nav-link", "css:finder"],
         ["xpath=//a[contains(text(),'Cancel')]", "xpath:link"],
-        ["xpath=//a[@href='http://localhost/esmoke/bookpostmo-index-cancel']", "xpath:href"],
+        ["xpath=//a[@href='https://esmoke.appdesk.tech/bookpostmo-index-cancel']", "xpath:href"],
         ["xpath=//section/div/nav/ul/li[2]/a", "xpath:position"],
         ["xpath=//a[contains(.,'Cancel')]", "xpath:innerText"]
       ],
@@ -8168,6 +8168,6 @@
     "timeout": 300,
     "tests": ["c4a69793-5808-4397-98dc-f234f1c9a601", "6991db39-a50b-4d76-a724-5ea180b55e02", "e03390f3-9784-40f6-9050-dd02ca9d5003", "c4a69793-5808-4397-98dc-f234f1c9a608", "6991db39-a50b-4d76-a724-5ea180b55e09", "e03390f3-9784-40f6-9050-dd02ca9d5011", "c4a69793-5808-4397-98dc-f234f1c9a615", "6991db39-a50b-4d76-a724-5ea180b55e16", "e03390f3-9784-40f6-9050-dd02ca9d5017", "c4a69793-5808-4397-98dc-f234f1c9a622", "6991db39-a50b-4d76-a724-5ea180b55e23", "e03390f3-9784-40f6-9050-dd02ca9d5024"]
   }],
-  "urls": ["https://esmoke.hd-desk.com/bookpostmo-index-today", "http://localhost/bookpostmo-index-today", "http://localhost/founder-index-today", "http://localhost/postmo-index-today", "http://localhost/esmoke/bookpostmo-index-today"],
+  "urls": ["https://esmoke.hd-desk.com/bookpostmo-index-today", "http://localhost/bookpostmo-index-today", "http://localhost/founder-index-today", "http://localhost/postmo-index-today", "https://esmoke.appdesk.tech/bookpostmo-index-today"],
   "plugins": []
 }
