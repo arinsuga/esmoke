@@ -6,9 +6,14 @@
     <li class="nav-item has-treeview menu-open">
       <a href="{{ route('dashboard') }}" class="nav-link active">
         <i class="nav-icon fas fa-home"></i>
-        <p>
-          Home
-        </p>
+        <p>Home</p>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a href="{{ route('pelaksanaan.index') }}" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Pelaksanaan</p>
       </a>
     </li>
 
@@ -23,6 +28,21 @@
       </a>
 
       <ul class="nav nav-treeview">
+
+        <li class="nav-item">
+          <a href="{{ route('jenis.index') }}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Jenis Kegiatan</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('kegiatan.index') }}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Nama Kegiatan</p>
+          </a>
+        </li>
+
+
         <li class="nav-item">
           <a href="{{ route('mastercategory.index') }}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>

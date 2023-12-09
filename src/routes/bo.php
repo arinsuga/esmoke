@@ -42,6 +42,22 @@ Route::group(['middleware'=>'lang'],function ()
     //Tes
     Route::resource('ddd', 'All\DddController');
 
+    //Pelaksanaan
+    Route::resource('pelaksanaan', 'Pelaksanaan\PelaksanaanController');
+    Route::get('pelaksanaan-index-today', 'Pelaksanaan\PelaksanaanController@indexToday')->name('pelaksanaan.index.today');
+    Route::get('pelaksanaan-index-open', 'Pelaksanaan\PelaksanaanController@indexOpen')->name('pelaksanaan.index.open');
+    Route::get('pelaksanaan-index-cancel', 'Pelaksanaan\PelaksanaanController@indexCancel')->name('pelaksanaan.index.cancel');
+    Route::get('pelaksanaan-index-custom', 'Pelaksanaan\PelaksanaanController@indexCustom')->name('pelaksanaan.index.custom');
+    Route::post('pelaksanaan-index-custom-post', 'Pelaksanaan\PelaksanaanController@indexCustomPost')->name('pelaksanaan.index.custom.post');
+
+    //Jenis
+    Route::resource('jenis', 'Jenis\JenisController');
+    // Route::get('kegiatan/{tasktype}', 'Kegiatan\KegiatanController@getJson')->name('kegiatan.json');
+
+    //Kegiatan
+    Route::resource('kegiatan', 'Kegiatan\KegiatanController');
+    // Route::get('kegiatan/{tasktype}', 'Kegiatan\KegiatanController@getJson')->name('kegiatan.json');
+
     //activity dashboard
     Route::resource('dashboard', 'Dashboard\DashboardController');
     //activity
