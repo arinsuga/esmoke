@@ -32,13 +32,13 @@ use Arins\Repositories\Employee\EmployeeRepository;
 use Arins\Repositories\Job\JobRepository;
 use Arins\Repositories\Dept\DeptRepository;
 use Arins\Repositories\Subdept\SubdeptRepository;
-
 use Arins\Repositories\Technician\TechnicianRepository;
-
 use Arins\Repositories\Absensi\AbsensiRepository;
 use Arins\Repositories\UserabsensiView\UserabsensiViewRepository;
 
-
+use Arins\Repositories\Jenis\JenisRepository;
+use Arins\Repositories\Kegiatan\KegiatanRepository;
+use Arins\Repositories\Pelaksanaan\PelaksanaanRepository;
 
 //Models
 use App\User;
@@ -71,6 +71,10 @@ use Arins\Models\Subdept;
 
 use Arins\Models\Absensi;
 use Arins\Models\UserabsensiView;
+
+use Arins\Models\Jenis;
+use Arins\Models\Kegiatan;
+use Arins\Models\Pelaksanaan;
 
 //todo
 use Arins\Models\Gender;
@@ -394,6 +398,39 @@ class RepositoryServiceProvider extends ServiceProvider
             {
                 $model = new UserabsensiView();
                 $modelRepository = new UserabsensiViewRepository($model);
+                return $modelRepository;
+            }
+        );
+
+        //Jenis
+        $this->app->bind(
+            'Arins\Repositories\Jenis\JenisRepositoryInterface',
+            function()
+            {
+                $model = new Jenis();
+                $modelRepository = new JenisRepository($model);
+                return $modelRepository;
+            }
+        );
+
+        //Kegiatan
+        $this->app->bind(
+            'Arins\Repositories\Kegiatan\KegiatanRepositoryInterface',
+            function()
+            {
+                $model = new Kegiatan();
+                $modelRepository = new KegiatanRepository($model);
+                return $modelRepository;
+            }
+        );
+
+        //Pelaksanaan
+        $this->app->bind(
+            'Arins\Repositories\Pelaksanaan\PelaksanaanRepositoryInterface',
+            function()
+            {
+                $model = new Pelaksanaan();
+                $modelRepository = new PelaksanaanRepository($model);
                 return $modelRepository;
             }
         );
