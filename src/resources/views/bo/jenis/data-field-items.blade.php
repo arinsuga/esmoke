@@ -39,33 +39,6 @@ margin-left: auto; margin-right:auto;">
         @endif
       </div>
 
-      <div class="form-group">
-        <label>Category</label>
-        @if ($fieldEnabled == true)
-          <select name="tasktype_id" class="form-control">
-                @foreach ($tasktype as $key => $item)
-
-                  @if ($errors->any())
-                    {{ ($item->id == old('tasktype_id') ? $selected = 'selected' : $selected = '') }}
-                  @else
-                    {{ ( $item->id == $viewModel->data->tasktype_id ) ? $selected = 'selected' : $selected = '' }}
-                  @endif
-                  <option {{ $selected }} value="{{ $item->id }}">{{ $item->name }}</option>
-                  
-                @endforeach
-            </select>
-        @else
-          <input type="hidden" name="tasktype_id" value="{{ $viewModel->data->tasktype_id }}" readonly>
-          <div class="form-group">
-              <input disabled type="text" value="{{ $viewModel->data->tasktype->name }}" class="form-control">
-          </div>
-        @endif
-        <p class="text-red">{{ $errors->first('tasktype_id') }}</p>
-
-      </div>
-      
-<hr>
-      
       <!-- text input -->
       <div class="form-group">
         <label>Nama</label>

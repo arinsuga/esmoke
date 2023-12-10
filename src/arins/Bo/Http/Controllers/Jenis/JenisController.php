@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 
 use Arins\Http\Controllers\WebController;
 
-use Arins\Repositories\Tasktype\TasktypeRepositoryInterface;
-use Arins\Repositories\Tasksubtype1\Tasksubtype1RepositoryInterface;
+use Arins\Repositories\Jenis\JenisRepositoryInterface;
 
 // use Arins\Facades\Response;
 // use Arins\Facades\Filex;
@@ -19,17 +18,13 @@ class JenisController extends WebController
 {
     protected $dataActivitytype, $dataTasktype;
 
-    public function __construct(Tasksubtype1RepositoryInterface $parData,
-                                TasktypeRepositoryInterface $parDataTasktype)
+    public function __construct(JenisRepositoryInterface $parData)
     {
         $this->sViewName = 'jenis';
-        $this->activitytype_id = 1; //Support
-        $this->tasktype_id = null; //di null kan krn ambil dari user input
 
         parent::__construct();
 
         $this->data = $parData;
-        $this->dataTasktype = $parDataTasktype;
 
         $this->dataModel = [
             // 'tasktype' => $this->dataTasktype->byActivitytype($this->activitytype_id),

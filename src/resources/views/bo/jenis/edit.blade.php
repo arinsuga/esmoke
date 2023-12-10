@@ -21,17 +21,17 @@
 
 @section('content')
 
-<form role="form" id="frmData" method="POST" action="{{ route('mastersubcategory.update', ['mastersubcategory' => $viewModel->data->id]) }}" enctype="multipart/form-data">
+<form role="form" id="frmData" method="POST" action="{{ route('jenis.update', ['jenis' => $viewModel->data->id]) }}" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
-    @include('bo.mastersubcategory.data-field-items')
+    @include('bo.jenis.data-field-items')
 </form>
 
 @endsection
 
 @section('js')
 
-    @include('bo.mastersubcategory._script')
+    @include('bo.jenis._script')
 
 @endsection
