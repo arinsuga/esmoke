@@ -36,6 +36,7 @@ use Arins\Repositories\Technician\TechnicianRepository;
 use Arins\Repositories\Absensi\AbsensiRepository;
 use Arins\Repositories\UserabsensiView\UserabsensiViewRepository;
 
+use Arins\Repositories\Statuspelaksanaan\StatuspelaksanaanRepository;
 use Arins\Repositories\Jenis\JenisRepository;
 use Arins\Repositories\Kegiatan\KegiatanRepository;
 use Arins\Repositories\Pelaksanaan\PelaksanaanRepository;
@@ -72,6 +73,7 @@ use Arins\Models\Subdept;
 use Arins\Models\Absensi;
 use Arins\Models\UserabsensiView;
 
+use Arins\Models\Statuspelaksanaan;
 use Arins\Models\Jenis;
 use Arins\Models\Kegiatan;
 use Arins\Models\Pelaksanaan;
@@ -398,6 +400,17 @@ class RepositoryServiceProvider extends ServiceProvider
             {
                 $model = new UserabsensiView();
                 $modelRepository = new UserabsensiViewRepository($model);
+                return $modelRepository;
+            }
+        );
+
+        //Statuspelaksanaan
+        $this->app->bind(
+            'Arins\Repositories\Statuspelaksanaan\StatuspelaksanaanRepositoryInterface',
+            function()
+            {
+                $model = new Statuspelaksanaan();
+                $modelRepository = new StatuspelaksanaanRepository($model);
                 return $modelRepository;
             }
         );

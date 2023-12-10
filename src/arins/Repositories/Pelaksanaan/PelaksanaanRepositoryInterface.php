@@ -11,6 +11,7 @@ interface PelaksanaanRepositoryInterface extends BaseRepositoryInterface
     function existEmployeeStartEnd($employeeId, $startdt, $enddt);
     function byJenis($id);
     function byKegiatan($id);
+    function byStatus($statusId);
     function byStatusOpen();
     function byStatusClose();
     function byStatusCancel();

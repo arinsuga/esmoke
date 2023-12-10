@@ -14,12 +14,13 @@ trait TransformField
     //Overrideable from WebController method
     protected function transformFieldCreate($paDataField) {
         $dataField = $paDataField;
+        $dataField['statuspelaksanaan_id'] = 1; //default open on create
 
         if (isset($paDataField['startdt'])) {
 
             // $startdt = $dataField['meetingdt'].' '.$dataField['startdt'].':00'; 
             $startdt = $dataField['startdt'];
-            $dataField['startdt'] = ConvertDate::strDatetimeToDate($startdt);
+            $dataField['startdt'] = ConvertDate::strDateToDate($startdt);
 
         }
 
@@ -27,8 +28,8 @@ trait TransformField
 
             // $enddt = $dataField['meetingdt'].' '.$dataField['enddt'].':00'; 
             $enddt = $dataField['enddt']; 
-            $dataField['enddt'] = ConvertDate::strDatetimeToDate($enddt);
-    
+            $dataField['enddt'] = ConvertDate::strDateToDate($enddt);
+
         }
 
         return $dataField;

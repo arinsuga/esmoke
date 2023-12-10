@@ -41,6 +41,11 @@ class Pelaksanaan extends Model
         'updated_at',
     ];
 
+    public function employee()
+    {
+        return $this->belongsTo('Arins\Models\Employee');
+    }
+
     public function jenis()
     {
         return $this->belongsTo('Arins\Models\Jenis');

@@ -39,7 +39,6 @@ class PelaksanaanRepository extends BaseRepository implements PelaksanaanReposit
         $this->validateInput = [
             'kegiatan_id' => 'required',
             'subject' => 'required',
-            'description' => 'required',
             'startdt' => 'required',
             'enddt' => 'required',
             'employee_id' => 'required',
@@ -67,8 +66,8 @@ class PelaksanaanRepository extends BaseRepository implements PelaksanaanReposit
             $statuspelaksanaan_id = 1; //open
 
             //id
-            $data1 = $this->model::where('employeeId', $employeeId);
-            $data2 = $this->model::where('employeeId', $employeeId);
+            $data1 = $this->model::where('employee_id', $employeeId);
+            $data2 = $this->model::where('employee_id', $employeeId);
 
             //statuspelaksanaan_id
             $data1 = $data1->where('statuspelaksanaan_id', $statuspelaksanaan_id);
@@ -177,27 +176,27 @@ class PelaksanaanRepository extends BaseRepository implements PelaksanaanReposit
 
     public function byStatusOpen()
     {
-        return $this.byStatus(1);
+        return $this->byStatus(1);
     }
 
     public function byStatusClose()
     {
-        return $this.byStatus(2);
+        return $this->byStatus(2);
     }
 
     public function byStatusCancel()
     {
-        return $this.byStatus(3);
+        return $this->byStatus(3);
     }
 
     public function byStatusReject()
     {
-        return $this.byStatus(4);
+        return $this->byStatus(4);
     }
 
     public function byStatusPending()
     {
-        return $this.byStatus(5);
+        return $this->byStatus(5);
     }
 
 }

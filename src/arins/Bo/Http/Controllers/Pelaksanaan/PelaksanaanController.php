@@ -14,6 +14,8 @@ use Arins\Bo\Http\Controllers\Pelaksanaan\ValidateInput;
 use Arins\Bo\Http\Controllers\Pelaksanaan\TransformField;
 use Arins\Bo\Http\Controllers\Pelaksanaan\FilterField;
 
+use Arins\Repositories\Employee\EmployeeRepositoryInterface;
+use Arins\Repositories\Statuspelaksanaan\StatuspelaksanaanRepositoryInterface;
 use Arins\Repositories\Kegiatan\KegiatanRepositoryInterface;
 use Arins\Repositories\Pelaksanaan\PelaksanaanRepositoryInterface;
 use Arins\Repositories\Pelaksanaan\PelaksanaanderRepositoryInterface;
@@ -26,10 +28,13 @@ class PelaksanaanController extends WebController
     use UpdateStatus, ValidateInput;
     use TransformField, FilterField;
 
-    protected $dataRoom;
+    protected $dataEmployee;
+    protected $dataKegiatan, $dataStatuspelaksanaan;
 
     public function __construct(PelaksanaanRepositoryInterface $parData,
-                                KegiatanRepositoryInterface $parKegiatan)
+                                EmployeeRepositoryInterface $parDataEmployee,
+                                StatuspelaksanaanRepositoryInterface $parDataStatuspelaksanaan,
+                                KegiatanRepositoryInterface $parDataKegiatan)
     {
         if ($this->sViewName == null)
         {
@@ -39,9 +44,13 @@ class PelaksanaanController extends WebController
         parent::__construct();
 
         $this->data = $parData;
-        $this->dataKegiatan = $parKegiatan;
+        $this->dataEmployee = $parDataEmployee;
+        $this->dataStatuspelaksanaan = $parDataStatuspelaksanaan;
+        $this->dataKegiatan = $parDataKegiatan;
 
         $this->dataModel = [
+            'employee' => $this->dataEmployee->all(),
+            'statuspelaksanaan' => $this->dataStatuspelaksanaan->all(),
             'kegiatan' => $this->dataKegiatan->all(),
         ];
 

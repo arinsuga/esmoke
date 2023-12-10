@@ -6,28 +6,14 @@
     // });
     //CKEDITOR.replace( 'description' );
 
-    /** meetingdt tidak diformat lagi ke format iso
-     *  karena output sudah otomatis format iso
-     *  YYYY-MM-DD
-     */
-    flatpickr('#meetingdt', {
-        enableTime: false,
-        dateFormat: "{{ config('a1.datejs.date') }}",
-        defaultDate: new Date("{{ $viewModel->data->meetingdt }}")
-    });
-
     /** startdt tidak diformat lagi ke format iso
      *  karena output sudah otomatis format iso
      *  HH:mm
      */
     flatpickr('#startdt', {
-        enableTime: true,
-        noCalendar: true,
-        dateFormat: "{{ config('a1.datejs.timeshort') }}",
-        defaultHour: 8,
-        minTime: '08:00',
-        maxTime: '17:00',
-        time_24hr: true
+        enableTime: false,
+        noCalendar: false,
+        dateFormat: "{{ config('a1.datejs.date') }}"
     });
 
     /** enddt tidak diformat lagi ke format iso
@@ -35,13 +21,9 @@
      *  YYYY-MM-DD HH:mm:ss
      */
     flatpickr('#enddt', {
-        enableTime: true,
-        noCalendar: true,
-        dateFormat: "{{ config('a1.datejs.timeshort') }}",
-        defaultHour: 8,
-        minTime: '08:00',
-        maxTime: '17:00',
-        time_24hr: true
+        enableTime: false,
+        noCalendar: false,
+        dateFormat: "{{ config('a1.datejs.date') }}"
     });
 
 // window.jsPDF = window.jspdf.jsPDF;

@@ -25,7 +25,7 @@ trait ValidateInput
         $employee_id = $data['employee_id'];
         $startdt = $data['startdt'];
         $enddt = $data['enddt'];
-        $validationData = $this->data->existRoomStartEnd($employee_id, $startdt, $enddt);
+        $validationData = $this->data->existEmployeeStartEnd($employee_id, $startdt, $enddt);
         if ( ($validationData < 0) || ($validationData > 0) ) {
 
             $result = false;
@@ -57,7 +57,7 @@ trait ValidateInput
         $employee_id = $data['employee_id'];
         $startdt = $data['startdt'];
         $enddt = $data['enddt'];
-        $validationData = $this->data->existRoomStartEnd($employee_id, $startdt, $enddt);
+        $validationData = $this->data->existEmployeeStartEnd($employee_id, $startdt, $enddt);
         if ( ($validationData < 0) || ($validationData > 0) ) {
 
             $result = false;

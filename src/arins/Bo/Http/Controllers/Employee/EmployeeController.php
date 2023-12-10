@@ -48,7 +48,6 @@ class EmployeeController extends BoController
 
         $subdept_id = $dataField['subdept_id'];
         if (isset($subdept_id)) {
-            return dd($subdept_id);
             $dataField['dept_id'] = $this->dataSubdept->find($subdept_id)->dept->id;
         }
 

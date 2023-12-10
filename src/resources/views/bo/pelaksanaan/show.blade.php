@@ -17,7 +17,7 @@
     </a>
 </li> -->
 
-@if ($viewModel->data->orderstatus_id == 3)
+@if ($viewModel->data->statuspelaksanaan_id == 3)
     <!-- button Reopen -->
     <!-- <li class="nav-item">
         <a class="nav-link" href="{{ route('pelaksanaan.reopen', ['pelaksanaan' => $viewModel->data->id]) }}">
@@ -26,7 +26,7 @@
     </li> -->
 @endif
 
-@if ($viewModel->data->orderstatus_id == 1)
+@if ($viewModel->data->statuspelaksanaan_id == 1)
 
 <!-- button close -->
 <!-- <li class="nav-item">
@@ -97,11 +97,32 @@
     <!-- <script src="{{ asset('js/CustomForShow.js') }}" defer></script> -->
 
     <script>
-        
+
+        /** startdt tidak diformat lagi ke format iso
+         *  karena output sudah otomatis format iso
+         *  HH:mm
+         */
+        flatpickr('#startdt', {
+            enableTime: false,
+            noCalendar: false,
+            dateFormat: "{{ config('a1.datejs.date') }}"
+        });
+
+        /** enddt tidak diformat lagi ke format iso
+         *  karena output sudah otomatis format iso
+         *  YYYY-MM-DD HH:mm:ss
+         */
+        flatpickr('#enddt', {
+            enableTime: false,
+            noCalendar: false,
+            dateFormat: "{{ config('a1.datejs.date') }}"
+        });
+
         var modalClose = $("#modalClose");
         var modalCloseResolution = $("#modalCloseResolution");
         var modalCloseCancelation = $("#modalCloseCancelation");
 
+        
         function deleteOrder() {
 
             modalClose.click();
@@ -132,7 +153,7 @@
 
 
 @php($baseRoute='pelaksanaan')
-@include('bo.bookroom.modal-approve')    
-@include('bo.bookroom.modal-cancel')    
-@include('bo.bookroom.modal-delete')    
+@include('bo.pelaksanaan.modal-approve')    
+@include('bo.pelaksanaan.modal-cancel')    
+@include('bo.pelaksanaan.modal-delete')    
 
