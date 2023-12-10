@@ -6,14 +6,14 @@
 
 <!-- button back -->
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('mastersubcategory.index') }}">
+    <a class="nav-link" href="{{ route('kegiatan.index') }}">
         <i class="fas fa-lg fa-arrow-left"></i>
     </a>
 </li>
 
 <!-- button edit -->
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('mastersubcategory.edit', ['mastersubcategory' => $viewModel->data->id]) }}">
+    <a class="nav-link" href="{{ route('kegiatan.edit', ['kegiatan' => $viewModel->data->id]) }}">
         <i class="fas fa-lg fa-edit"></i>
     </a>
 </li>
@@ -24,7 +24,7 @@
        class="nav-link" href="#">
         <i class="fas fa-lg fa-trash"></i>
     </a>
-    <form id="frmData" role="form" id="frmData" method="POST" action="{{ route('mastersubcategory.destroy', ['mastersubcategory' => $viewModel->data->id]) }}">
+    <form id="frmData" role="form" id="frmData" method="POST" action="{{ route('kegiatan.destroy', ['kegiatan' => $viewModel->data->id]) }}">
         @csrf
         @method('DELETE')
     </form>
@@ -34,7 +34,7 @@
 @endsection
 
 @section('content')
-    @include('bo.mastersubcategory.data-field-items')
+    @include('bo.kegiatan.data-field-items')
 @endsection
 
 @section('style')

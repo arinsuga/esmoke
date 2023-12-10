@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 use Arins\Http\Controllers\WebController;
 
-use Arins\Repositories\Tasktype\TasktypeRepositoryInterface;
-use Arins\Repositories\Tasksubtype1\Tasksubtype1RepositoryInterface;
+use Arins\Repositories\Kegiatan\KegiatanRepositoryInterface;
+use Arins\Repositories\Jenis\JenisRepositoryInterface;
 
 // use Arins\Facades\Response;
 // use Arins\Facades\Filex;
@@ -17,22 +17,20 @@ use Arins\Repositories\Tasksubtype1\Tasksubtype1RepositoryInterface;
 
 class KegiatanController extends WebController
 {
-    protected $dataActivitytype, $dataTasktype;
+    protected $dataJenis;
 
-    public function __construct(Tasksubtype1RepositoryInterface $parData,
-                                TasktypeRepositoryInterface $parDataTasktype)
+    public function __construct(KegiatanRepositoryInterface $parData,
+                                JenisRepositoryInterface $parDataJenis)
     {
         $this->sViewName = 'kegiatan';
-        $this->activitytype_id = 1; //Support
-        $this->tasktype_id = null; //di null kan krn ambil dari user input
 
         parent::__construct();
 
         $this->data = $parData;
-        $this->dataTasktype = $parDataTasktype;
+        $this->dataJenis = $parDataJenis;
 
         $this->dataModel = [
-            // 'tasktype' => $this->dataTasktype->byActivitytype($this->activitytype_id),
+            'jenis' => $this->dataJenis->all(),
         ];        
 
         /**

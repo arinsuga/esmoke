@@ -5,7 +5,7 @@
 @section('toolbar')
 
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('mastersubcategory.index') }}">
+    <a class="nav-link" href="{{ route('kegiatan.index') }}">
         <i class="fas fa-lg fa-arrow-left"></i>
     </a>
 </li>
@@ -22,11 +22,11 @@
 
 @section('content')
 
-<form role="form" id="frmData" method="POST" action="{{ route('mastersubcategory.store') }}" enctype="multipart/form-data">
+<form role="form" id="frmData" method="POST" action="{{ route('kegiatan.store') }}" enctype="multipart/form-data">
     @csrf
 
     <div style="display: flex; justify-content=center;">
-        @include('bo.mastersubcategory.data-field-items')
+        @include('bo.kegiatan.data-field-items')
     </div>
 </form>
 
@@ -34,6 +34,6 @@
 
 @section('js')
 
-    @include('bo.mastersubcategory._script')
+    @include('bo.kegiatan._script')
 
 @endsection
