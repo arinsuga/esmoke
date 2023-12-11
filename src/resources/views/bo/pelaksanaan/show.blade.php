@@ -6,7 +6,7 @@
 
 <!-- button back -->
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('bookpostmo.index') }}">
+    <a class="nav-link" href="{{ route('pelaksanaan.index') }}">
         <i class="fas fa-lg fa-arrow-left"></i>
     </a>
 </li>
@@ -20,7 +20,7 @@
 @if ($viewModel->data->orderstatus_id == 3)
     <!-- button Reopen -->
     <!-- <li class="nav-item">
-        <a class="nav-link" href="{{ route('bookpostmo.reopen', ['bookpostmo' => $viewModel->data->id]) }}">
+        <a class="nav-link" href="{{ route('pelaksanaan.reopen', ['pelaksanaan' => $viewModel->data->id]) }}">
             <span style="font-weight: bold;">Reopen</span>
         </a>
     </li> -->
@@ -50,7 +50,7 @@
 
 <!-- button edit -->
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('bookpostmo.edit', ['bookpostmo' => $viewModel->data->id]) }}">
+    <a class="nav-link" href="{{ route('pelaksanaan.edit', ['pelaksanaan' => $viewModel->data->id]) }}">
         <i class="fas fa-lg fa-edit"></i>
     </a>
 </li>
@@ -71,7 +71,7 @@
         <i class="fas fa-lg fa-trash"></i>
     </a>
 
-    <form id="frmData" role="form" id="frmData" method="POST" action="{{ route('bookpostmo.destroy', ['bookpostmo' => $viewModel->data->id]) }}">
+    <form id="frmData" role="form" id="frmData" method="POST" action="{{ route('pelaksanaan.destroy', ['pelaksanaan' => $viewModel->data->id]) }}">
         @csrf
         @method('DELETE')
     </form>
@@ -81,7 +81,7 @@
 @endsection
 
 @section('content')
-    @include('bo.bookpostmo.data-field-items')
+    @include('bo.pelaksanaan.data-field-items')
 @endsection
 
 @section('style')
@@ -131,7 +131,7 @@
 @endsection
 
 
-@php($baseRoute='bookpostmo')
+@php($baseRoute='pelaksanaan')
 @include('bo.bookroom.modal-approve')    
 @include('bo.bookroom.modal-cancel')    
 @include('bo.bookroom.modal-delete')    

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Auth;
 
-trait ValidateOrder
+trait ValidateInput
 {
 
     //Overrideable from WebController method
@@ -22,17 +22,17 @@ trait ValidateOrder
         } //end if validator
 
         //Custom validation
-        $id = $this->room_id;
-        $meetingdt = $data['meetingdt'];
+        $employee_id = $data['employee_id'];
         $startdt = $data['startdt'];
         $enddt = $data['enddt'];
-        $validationData = $this->data->existRoomStartEnd($id, $meetingdt, $startdt, $enddt);
+        $validationData = $this->data->existRoomStartEnd($employee_id, $startdt, $enddt);
         if ( ($validationData < 0) || ($validationData > 0) ) {
 
             $result = false;
             if ($validationData > 0) {
 
-                $this->validator->errors()->add('custom', 'Ruang meeting sudah di booking...');
+                $this->validator->errors()
+                ->add('custom', 'Karyawan sudah ada kegiatan pada periode ' . $data['startdt'] . ' s/d ' . $data['enddt']);
 
             } //end if
 
@@ -54,17 +54,17 @@ trait ValidateOrder
         } //end if validator
 
         //Custom validation
-        $id = $this->room_id;
-        $meetingdt = $data['meetingdt'];
+        $employee_id = $data['employee_id'];
         $startdt = $data['startdt'];
         $enddt = $data['enddt'];
-        $validationData = $this->data->existRoomStartEnd($id, $meetingdt, $startdt, $enddt);
+        $validationData = $this->data->existRoomStartEnd($employee_id, $startdt, $enddt);
         if ( ($validationData < 0) || ($validationData > 0) ) {
 
             $result = false;
             if ($validationData > 0) {
 
-                $this->validator->errors()->add('custom', 'Ruang meeting sudah di booking...');
+                $this->validator->errors()
+                ->add('custom', 'Karyawan sudah ada kegiatan pada periode ' . $data['startdt'] . ' s/d ' . $data['enddt']);
 
             } //end if
 

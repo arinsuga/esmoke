@@ -21,7 +21,7 @@
 
 @section('content')
 
-<form role="form" id="frmData" method="POST" action="{{ route('bookpostmo.update', ['bookpostmo' => $viewModel->data->id]) }}" enctype="multipart/form-data">
+<form role="form" id="frmData" method="POST" action="{{ route('pelaksanaan.update', ['pelaksanaan' => $viewModel->data->id]) }}" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
@@ -36,13 +36,13 @@
     @endif
 
 
-    @include('bo.bookpostmo.data-field-items')
+    @include('bo.pelaksanaan.data-field-items')
 </form>
 
 @endsection
 
 @section('js')
 
-    @include('bo.bookpostmo._script')
+    @include('bo.pelaksanaan._script')
 
 @endsection

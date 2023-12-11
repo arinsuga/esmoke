@@ -5,7 +5,7 @@
 @section('toolbar')
 
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('bookpostmo.index') }}">
+    <a class="nav-link" href="{{ route('pelaksanaan.index') }}">
         <i class="fas fa-lg fa-arrow-left"></i>
     </a>
 </li>
@@ -22,7 +22,7 @@
 
 @section('content')
 
-<form role="form" id="frmData" method="POST" action="{{ route('bookpostmo.store') }}" enctype="multipart/form-data">
+<form role="form" id="frmData" method="POST" action="{{ route('pelaksanaan.store') }}" enctype="multipart/form-data">
     @csrf
 
     @if ($errors->first('custom') !== '')
@@ -37,7 +37,7 @@
 
 
     <div style="display: flex; justify-content=center;">
-        @include('bo.bookpostmo.data-field-items')
+        @include('bo.pelaksanaan.data-field-items')
     </div>
 </form>
 
@@ -45,6 +45,6 @@
 
 @section('js')
 
-    @include('bo.bookpostmo._script')
+    @include('bo.pelaksanaan._script')
 
 @endsection

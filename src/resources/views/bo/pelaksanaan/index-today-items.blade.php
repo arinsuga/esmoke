@@ -30,9 +30,8 @@
     <thead>
         <tr>
             <th style="width: 1%;">No</th>
-            <th style="width: 5%;">Nama</th>
-            <th style="width: 5%;">Subject</th>
-            <th style="width: 3%;">Tanggal</th>
+            <th style="width: 7%;">Nama Kegiatan</th>
+            <th style="width: 6%;">Subject</th>
             <th style="width: 3%;">Mulai</th>
             <th style="width: 3%;">Selesai</th>
             <th class="time-title">08:00</th>
@@ -52,17 +51,14 @@
         @foreach ($viewModel->data as $key => $item)
             <tr onclick="window.location.assign('{{ route('bookpostmo.show', ['bookpostmo' => $item->id]) }}');">
                 <td>{{ $key+1 }}</td>
-                <td>{{ $item->name }}</td>
+                <td>{{ $item->kegiatan->name }}</td>
                 <td>{{ $item->subject }}</td>
 
                 <td>
-                    <div class="text-center">{{ \Arins\Facades\Formater::date($item->meetingdt) }}</div>
+                    <div class="text-center">{{ \Arins\Facades\Formater::date($item->startdt) }}</div>
                 </td>
                 <td>
-                    <div class="text-center">{{ \Arins\Facades\Formater::time($item->startdt) }}</div>
-                </td>
-                <td>
-                    <div class="text-center">{{ \Arins\Facades\Formater::time($item->enddt) }}</div>
+                    <div class="text-center">{{ \Arins\Facades\Formater::date($item->enddt) }}</div>
                 </td>
 
                 <td colspan="10">
@@ -75,7 +71,6 @@
                         @for ($i=0; $i<=$item->progressRun; $i++)
                         <div class="progress progress-run"></div>
                         @endfor
-
                     </div>
 
                 </td>

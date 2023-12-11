@@ -13,7 +13,7 @@
 @section('toolbar')
 
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('bookpostmo.create') }}">
+    <a class="nav-link" href="{{ route('pelaksanaan.create') }}">
         <i class="fas fa-lg fa-plus"></i>
     </a>
 </li>
@@ -28,7 +28,7 @@
 
 @section('control_sidebar')
     <div class="control-sidebar-content">
-        @include('bo.bookpostmo.data-list-filters')
+        @include('bo.pelaksanaan.data-list-filters')
     </div>
 @endsection
 
@@ -39,25 +39,25 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('bookpostmo.index.today') }}" style="font-weight: bold;">
+                    <a class="nav-link" href="{{ route('pelaksanaan.index.today') }}" style="font-weight: bold;">
                         Today
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('bookpostmo.index.cancel') }}" style="font-weight: bold;">
+                    <a class="nav-link" href="{{ route('pelaksanaan.index.cancel') }}" style="font-weight: bold;">
                         Cancel
                     </a>
                 </li>
 
                 <li class="nav-item" style="border-bottom: 5px solid red;">
-                    <a class="nav-link" href="{{ route('bookpostmo.index.custom') }}" style="font-weight: bold;">
+                    <a class="nav-link" href="{{ route('pelaksanaan.index.custom') }}" style="font-weight: bold;">
                         Custom
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('bookpostmo.index') }}" style="font-weight: bold;">
+                    <a class="nav-link" href="{{ route('pelaksanaan.index') }}" style="font-weight: bold;">
                         All
                     </a>
                 </li>
@@ -70,11 +70,11 @@
         <!-- Form Custom Search -->
         <div>
 
-            <form role="form" id="frmData" method="POST" action="{{ route('bookpostmo.index.custom.post') }}" enctype="multipart/form-data">
+            <form role="form" id="frmData" method="POST" action="{{ route('pelaksanaan.index.custom.post') }}" enctype="multipart/form-data">
                 @csrf
 
                 <div style="display: flex; justify-content=center;">
-                    @include('bo.bookpostmo.index-custom-fields')
+                    @include('bo.pelaksanaan.index-custom-fields')
                 </div>
             </form>
 
@@ -83,7 +83,7 @@
 
         @if (isset($viewModel->data->datalist))
             <div style="margin-top: 10px;">
-                @include('bo.bookpostmo.index-custom-datalist')
+                @include('bo.pelaksanaan.index-custom-datalist')
             </div>
         @endif
 
@@ -92,7 +92,7 @@
 
 @section('js')
 
-    @include('bo.bookpostmo._script')
+    @include('bo.pelaksanaan._script')
 
 @endsection
 

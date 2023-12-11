@@ -7,6 +7,13 @@ use Arins\Repositories\BaseRepositoryInterface;
 //Inherit interface to BaseRepositoryInterface
 interface PelaksanaanRepositoryInterface extends BaseRepositoryInterface
 {
-    public function byJenis($id);
-    public function byKegiatan($id);
+    function byCustom($filter, $take=null);
+    function existEmployeeStartEnd($employeeId, $startdt, $enddt);
+    function byJenis($id);
+    function byKegiatan($id);
+    function byStatusOpen();
+    function byStatusClose();
+    function byStatusCancel();
+    function byStatusReject();
+    function byStatusPending();
 }

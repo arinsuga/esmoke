@@ -57,6 +57,109 @@ class PelaksanaanRepository extends BaseRepository implements PelaksanaanReposit
 
     }
 
+    public function existEmployeeStartEnd($employeeId, $startdt, $enddt)
+    {
+        $result = -1;
+
+        if ( isset($employeeId) && isset($startdt) && isset($enddt) ) {
+
+            $result = 0;
+            $statuspelaksanaan_id = 1; //open
+
+            //id
+            $data1 = $this->model::where('employeeId', $employeeId);
+            $data2 = $this->model::where('employeeId', $employeeId);
+
+            //statuspelaksanaan_id
+            $data1 = $data1->where('statuspelaksanaan_id', $statuspelaksanaan_id);
+            $data2 = $data2->where('statuspelaksanaan_id', $statuspelaksanaan_id);
+
+            //startdt
+            $data1 = $data1->where('startdt', '<=', $startdt);
+            $data1 = $data1->where('enddt', '>=', $startdt);
+            // $data1 = $data1->where('enddt', '>=', $startdt);
+            //enddt
+            $data2 = $data2->where('startdt', '<=', $enddt);
+            $data2 = $data2->where('enddt', '>=', $enddt);
+
+            $data1 = $data1->get();
+            $data2 = $data2->get();
+            $result = count($data1);
+            if ($result <= 0) {
+                
+                $result = count($data2);
+    
+            } //end if
+    
+
+        } //end if      
+
+        return $result;
+    }
+
+    public function byCustom($filter, $take=null)
+    {
+        // $result = $this->model::where('room_id', $id);
+        $result = $this->model;
+
+        //employee_id
+        if (isset($filter['employee_id'])) {
+            $result = $result->where('employee_id', $filter['employee_id']);
+        }
+
+        //kegiatan_id
+        if (isset($filter['kegiatan_id'])) {
+            $result = $result->where('kegiatan_id', $filter['kegiatan_id']);
+        }
+
+        //subject
+        if (isset($filter['subject'])) {
+            $result = $result->where('subject', $filter['subject']);
+        }
+
+        //startdt - enddt
+        if (
+            isset($filter['startdt']) &&
+            isset($filter['enddt'])
+        ) {
+
+            //startdt
+            $result = $result->where('startdt', '<=', $startdt);
+            $result = $result->where('enddt', '>=', $startdt);
+            //enddt
+            $result = $result->where('startdt', '<=', $enddt);
+            $result = $result->where('enddt', '>=', $enddt);
+
+        } elseif ( isset($filter['startdt']) && !isset($filter['enddt']) ) {
+
+            //startdt
+            $result = $result->where('startdt', '<=', $startdt);
+            $result = $result->where('enddt', '>=', $startdt);
+
+        } elseif ( !isset($filter['startdt']) && isset($filter['enddt']) )  {
+
+            //enddt
+            $result = $result->where('startdt', '<=', $enddt);
+            $result = $result->where('enddt', '>=', $enddt);
+
+        }//end if
+
+
+        //statuspelaksanaan_id
+        if (isset($filter['statuspelaksanaan_id'])) {
+            $result = $result->where('statuspelaksanaan_id', $filter['statuspelaksanaan_id']);
+        }
+        
+        
+        if ($take == null) {
+            $result = $result->get();
+        } else {
+            $result = $result->take($take)->get();
+        }
+
+        return $result;
+    }
+
     public function byJenis($id)
     {
         return $this->model->where('jenis_id', $id)->get();
@@ -67,5 +170,34 @@ class PelaksanaanRepository extends BaseRepository implements PelaksanaanReposit
         return $this->model->where('kegiatan_id', $id)->get();
     }
 
+    public function byStatus($statusId)
+    {
+        return $this->model->where('statuspelaksanaan_id', $statusId)->get();
+    }
+
+    public function byStatusOpen()
+    {
+        return $this.byStatus(1);
+    }
+
+    public function byStatusClose()
+    {
+        return $this.byStatus(2);
+    }
+
+    public function byStatusCancel()
+    {
+        return $this.byStatus(3);
+    }
+
+    public function byStatusReject()
+    {
+        return $this.byStatus(4);
+    }
+
+    public function byStatusPending()
+    {
+        return $this.byStatus(5);
+    }
 
 }

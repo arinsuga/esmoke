@@ -10,44 +10,39 @@ use Auth;
 use Arins\Http\Controllers\WebController;
 
 use Arins\Bo\Http\Controllers\Pelaksanaan\UpdateStatus;
-use Arins\Bo\Http\Controllers\Pelaksanaan\ValidateOrder;
+use Arins\Bo\Http\Controllers\Pelaksanaan\ValidateInput;
 use Arins\Bo\Http\Controllers\Pelaksanaan\TransformField;
 use Arins\Bo\Http\Controllers\Pelaksanaan\FilterField;
 
-use Arins\Repositories\Orderstatus\OrderstatusRepositoryInterface;
-use Arins\Repositories\Room\RoomRepositoryInterface;
-use Arins\Repositories\Roomorder\RoomorderRepositoryInterface;
+use Arins\Repositories\Kegiatan\KegiatanRepositoryInterface;
+use Arins\Repositories\Pelaksanaan\PelaksanaanRepositoryInterface;
+use Arins\Repositories\Pelaksanaan\PelaksanaanderRepositoryInterface;
 
 use Arins\Facades\Response;
 use Arins\Facades\Timeline;
 
 class PelaksanaanController extends WebController
 {
-    use UpdateStatus, ValidateOrder;
+    use UpdateStatus, ValidateInput;
     use TransformField, FilterField;
 
     protected $dataRoom;
-    protected $room_id;
 
-    public function __construct(RoomorderRepositoryInterface $parData,
-                                RoomRepositoryInterface $parRoom,
-                                OrderstatusRepositoryInterface $parOrderstatus)
+    public function __construct(PelaksanaanRepositoryInterface $parData,
+                                KegiatanRepositoryInterface $parKegiatan)
     {
         if ($this->sViewName == null)
         {
             $this->sViewName = 'pelaksanaan';
-            $this->room_id = 1; //Postmo
         } //end if
 
         parent::__construct();
 
         $this->data = $parData;
-        $this->dataRoom = $parRoom;
-        $this->dataOrderstatus = $parOrderstatus;
+        $this->dataKegiatan = $parKegiatan;
 
         $this->dataModel = [
-            'room' => $this->dataRoom->all(),
-            'orderstatus' => $this->dataOrderstatus->all()
+            'kegiatan' => $this->dataKegiatan->all(),
         ];
 
         /**
@@ -66,7 +61,7 @@ class PelaksanaanController extends WebController
     public function index()
     {
         $this->viewModel = Response::viewModel();
-        $this->viewModel->data = $this->data->byRoomOrderByIdDesc($this->room_id);
+        $this->viewModel->data = $this->data->all();
         $this->aResponseData = ['viewModel' => $this->viewModel];
 
         return view($this->sViewRoot.'.index', $this->aResponseData);
@@ -76,7 +71,7 @@ class PelaksanaanController extends WebController
     public function indexToday()
     {
         $this->viewModel = Response::viewModel();
-        $this->viewModel->data = $this->data->byRoomTodayOrderByIdAndStartdtDesc($this->room_id);
+        $this->viewModel->data = $this->data->all();
 
         $this->aResponseData = ['viewModel' => $this->viewModel];
 
@@ -103,7 +98,7 @@ class PelaksanaanController extends WebController
     public function indexOpen()
     {
         $this->viewModel = Response::viewModel();
-        $this->viewModel->data = $this->data->byRoomStatusOpenOrderByIdAndStartdtDesc($this->room_id);
+        $this->viewModel->data = $this->data->byStatusOpen();
         $this->aResponseData = ['viewModel' => $this->viewModel];
 
 
@@ -114,7 +109,7 @@ class PelaksanaanController extends WebController
     public function indexCancel()
     {
         $this->viewModel = Response::viewModel();
-        $this->viewModel->data = $this->data->byRoomStatusCancelOrderByIdAndStartdtDesc($this->room_id);
+        $this->viewModel->data = $this->data->byStatusCancel();
         $this->aResponseData = ['viewModel' => $this->viewModel];
 
 
@@ -148,7 +143,7 @@ class PelaksanaanController extends WebController
         $data = $this->data->getInputField();
         $data['datalist'] = null;
         $this->viewModel->data = json_decode(json_encode($data));
-        $this->viewModel->data->datalist = $this->data->byRoomCustom($this->room_id, $filter);
+        $this->viewModel->data->datalist = $this->data->byCustom($filter);
         
         $this->aResponseData = [
             'viewModel' => $this->viewModel,
