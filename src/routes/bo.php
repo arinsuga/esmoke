@@ -36,8 +36,8 @@ Route::group(['middleware'=>'lang'],function ()
 
     //Home
 //    Route::resource('home', 'Home\HomeController');
-    // Route::get('/', 'Home\HomeController@index')->name('home.index');
-    Route::get('/', 'Dashboard\DashboardController@index')->name('dashboard');
+    Route::get('/', 'Home\HomeController@index')->name('home.index');
+    // Route::get('dashboard', 'Dashboard\DashboardController@index')->name('dashboard');
 
     //Tes
     Route::resource('ddd', 'All\DddController');
