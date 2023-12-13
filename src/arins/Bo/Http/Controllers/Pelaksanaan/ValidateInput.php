@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Auth;
 
+use Arins\Facades\Formater;
+
 trait ValidateInput
 {
 
@@ -32,7 +34,8 @@ trait ValidateInput
             if ($validationData > 0) {
 
                 $this->validator->errors()
-                ->add('custom', 'Karyawan sudah ada kegiatan pada periode ' . $data['startdt'] . ' s/d ' . $data['enddt']);
+                ->add('custom', 'Karyawan sudah ada kegiatan pada periode '
+                . Formater::date($startdt) . ' s/d ' . Formater::date($enddt));
 
             } //end if
 

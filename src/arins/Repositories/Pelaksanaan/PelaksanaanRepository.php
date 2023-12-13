@@ -139,29 +139,36 @@ class PelaksanaanRepository extends BaseRepository implements PelaksanaanReposit
 
             //startdt
             if ($result != null) {
-                $result = $result->where('startdt', '=', $filter['startdt']);
+                $result = $result->where('startdt', '<=', $filter['startdt']);
+                $result = $result->where('enddt', '>=', $filter['startdt']);
             } else {
-                $result = $this->model::where('startdt', '=', $filter['startdt']);
+                $result = $this->model::where('startdt', '<=', $filter['startdt']);
+                $result = $this->model::where('enddt', '>=', $filter['startdt']);
             }
             //enddt
-            $result = $result->where('enddt', '=', $filter['enddt']);
+            $result = $result->where('start', '<=', $filter['enddt']);
+            $result = $result->where('enddt', '>=', $filter['enddt']);
 
         } elseif ( isset($filter['startdt']) && !isset($filter['enddt']) ) {
 
             //startdt
             if ($result != null) {
-                $result = $result->where('startdt', '=', $filter['startdt']);
+                $result = $result->where('startdt', '<=', $filter['startdt']);
+                $result = $result->where('enddt', '>=', $filter['startdt']);
             } else {
-                $result = $this->model::where('startdt', '=', $filter['startdt']);
+                $result = $this->model::where('startdt', '<=', $filter['startdt']);
+                $result = $result->where('enddt', '>=', $filter['startdt']);
             }
 
         } elseif ( !isset($filter['startdt']) && isset($filter['enddt']) )  {
 
             //enddt
             if ($result != null) {
-                $result = $result->where('startdt', '=', $filter['enddt']);
+                $result = $result->where('startdt', '<=', $filter['enddt']);
+                $result = $result->where('enddt', '>=', $filter['enddt']);
             } else {
-                $result = $this->model::where('startdt', '=', $filter['enddt']);
+                $result = $this->model::where('startdt', '<=', $filter['enddt']);
+                $result = $result->where('enddt', '>=', $filter['enddt']);
             }
 
         }//end if
