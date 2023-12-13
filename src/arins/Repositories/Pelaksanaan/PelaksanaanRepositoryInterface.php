@@ -8,7 +8,7 @@ use Arins\Repositories\BaseRepositoryInterface;
 interface PelaksanaanRepositoryInterface extends BaseRepositoryInterface
 {
     function byCustom($filter, $take=null);
-    function existEmployeeStartEnd($employeeId, $startdt, $enddt);
+    function existEmployeeStartEnd($employeeId, $startdt, $enddt, $pelaksanaanId = null);
     function byJenis($id);
     function byKegiatan($id);
     function byStatus($statusId);

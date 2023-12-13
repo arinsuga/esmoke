@@ -192,6 +192,7 @@ class WebController extends Controller
         $imageOld = $record->image;
 
         //get input value by fillable fields
+        $id = $request->input('id');
         $data = $request->only($this->data->getFillable()); //get field input
         $upload = $request->file('upload'); //upload file (image/document) ==> if included
         $imageTemp = $request->input('imageTemp'); //temporary file uploaded
@@ -203,8 +204,7 @@ class WebController extends Controller
         $request->session()->flash('imageTemp', $uploadTemp);
 
         //validate input value
-        //validate input value
-        $valid = $this->validateUpdate($data, $this->data->getValidateInput(), $this->validationMessages);
+        $valid = $this->validateUpdate($data, $this->data->getValidateInput(), $this->validationMessages, $id);
         if (!$valid) {
 
             //step 2: Kembali ke halaman input
@@ -333,7 +333,7 @@ class WebController extends Controller
     }
 
     //Overrideable method
-    protected function validateUpdate($data, $validateInput, $validationMessages) {
+    protected function validateUpdate($data, $validateInput, $validationMessages, $id) {
         $result = true;
 
         //Custom overrride code here...

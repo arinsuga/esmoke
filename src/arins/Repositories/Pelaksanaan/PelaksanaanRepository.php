@@ -56,7 +56,7 @@ class PelaksanaanRepository extends BaseRepository implements PelaksanaanReposit
 
     }
 
-    public function existEmployeeStartEnd($employeeId, $startdt, $enddt)
+    public function existEmployeeStartEnd($employeeId, $startdt, $enddt, $pelaksanaanId = null)
     {
         $result = -1;
 
@@ -70,8 +70,15 @@ class PelaksanaanRepository extends BaseRepository implements PelaksanaanReposit
             $data2 = $this->model::where('employee_id', $employeeId);
 
             //statuspelaksanaan_id
-            $data1 = $data1->where('statuspelaksanaan_id', $statuspelaksanaan_id);
-            $data2 = $data2->where('statuspelaksanaan_id', $statuspelaksanaan_id);
+            $data1 = $data1->where('statuspelaksanaan_id', '!=', $statuspelaksanaan_id);
+            $data2 = $data2->where('statuspelaksanaan_id', '!=', $statuspelaksanaan_id);
+
+            if ($pelaksanaanId != null) {
+
+                $data1 = $data1->where('id', $pelaksanaanId);
+                $data2 = $data2->where('id', $pelaksanaanId);
+    
+            }
 
             //startdt
             $data1 = $data1->where('startdt', '<=', $startdt);
