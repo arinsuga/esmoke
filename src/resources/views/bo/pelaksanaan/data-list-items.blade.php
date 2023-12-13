@@ -4,8 +4,9 @@
             <th style="width: 5%;"></th>
             <th style="width: 5%;">Mulai</th>
             <th style="width: 5%;">Selesai</th>
-            <th style="width: 40%;">Nama Kegiatan</th>
-            <th style="width: 45%;">Keterangan</th>
+            <th style="width: 15%;">Nama Karyawan</th>
+            <th style="width: 30%;">Nama Kegiatan</th>
+            <th style="width: 30%;">Keterangan</th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +19,9 @@
                 </td>
                 <td>
                     <div class="text-center">{{ \Arins\Facades\Formater::date($item->enddt) }}</div>
+                </td>
+                <td>
+                    <div>{{ $item->employee->name }}</div>
                 </td>
                 <td>
                     <div>{{ $item->kegiatan->name }}</div>

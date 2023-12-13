@@ -98,22 +98,37 @@ class PelaksanaanRepository extends BaseRepository implements PelaksanaanReposit
 
     public function byCustom($filter, $take=null)
     {
+        
         // $result = $this->model::where('room_id', $id);
-        $result = $this->model;
+        $result = null;
 
         //employee_id
         if (isset($filter['employee_id'])) {
-            $result = $result->where('employee_id', $filter['employee_id']);
+
+            $result = $this->model::where('employee_id', $filter['employee_id']);
+
         }
 
         //kegiatan_id
         if (isset($filter['kegiatan_id'])) {
-            $result = $result->where('kegiatan_id', $filter['kegiatan_id']);
+
+            if ($result != null) {
+                $result = $result->where('kegiatan_id', $filter['kegiatan_id']);
+            } else {
+                $result = $this->model::where('kegiatan_id', $filter['kegiatan_id']);
+            }
+
         }
 
         //subject
         if (isset($filter['subject'])) {
-            $result = $result->where('subject', $filter['subject']);
+
+            if ($result != null) {
+                $result = $result->where('subject', 'like', '%' . $filter['subject'] . '%');
+            } else {
+                $result = $this->model::where('subject', 'like', '%' . $filter['subject'] . '%');
+            }
+
         }
 
         //startdt - enddt
@@ -123,37 +138,62 @@ class PelaksanaanRepository extends BaseRepository implements PelaksanaanReposit
         ) {
 
             //startdt
-            $result = $result->where('startdt', '<=', $startdt);
-            $result = $result->where('enddt', '>=', $startdt);
+            if ($result != null) {
+                $result = $result->where('startdt', '=', $filter['startdt']);
+            } else {
+                $result = $this->model::where('startdt', '=', $filter['startdt']);
+            }
             //enddt
-            $result = $result->where('startdt', '<=', $enddt);
-            $result = $result->where('enddt', '>=', $enddt);
+            $result = $result->where('enddt', '=', $filter['enddt']);
 
         } elseif ( isset($filter['startdt']) && !isset($filter['enddt']) ) {
 
             //startdt
-            $result = $result->where('startdt', '<=', $startdt);
-            $result = $result->where('enddt', '>=', $startdt);
+            if ($result != null) {
+                $result = $result->where('startdt', '=', $filter['startdt']);
+            } else {
+                $result = $this->model::where('startdt', '=', $filter['startdt']);
+            }
 
         } elseif ( !isset($filter['startdt']) && isset($filter['enddt']) )  {
 
             //enddt
-            $result = $result->where('startdt', '<=', $enddt);
-            $result = $result->where('enddt', '>=', $enddt);
+            if ($result != null) {
+                $result = $result->where('startdt', '=', $filter['enddt']);
+            } else {
+                $result = $this->model::where('startdt', '=', $filter['enddt']);
+            }
 
         }//end if
 
 
         //statuspelaksanaan_id
         if (isset($filter['statuspelaksanaan_id'])) {
-            $result = $result->where('statuspelaksanaan_id', $filter['statuspelaksanaan_id']);
+
+            if ($result != null) {
+                $result = $result->where('statuspelaksanaan_id', $filter['statuspelaksanaan_id']);
+            } else {
+                $result = $this->model::where('statuspelaksanaan_id', $filter['statuspelaksanaan_id']);
+            }
+
         }
         
-        
-        if ($take == null) {
-            $result = $result->get();
+        if ($result != null) {
+            
+            if ($take == null) {
+                $result = $result->get();
+            } else {
+                $result = $result->take($take)->get();
+            }
+
         } else {
-            $result = $result->take($take)->get();
+
+            if ($take == null) {
+                $result = $this->model::all();
+            } else {
+                $result = $this->model::take($take)->all();
+            }
+            
         }
 
         return $result;

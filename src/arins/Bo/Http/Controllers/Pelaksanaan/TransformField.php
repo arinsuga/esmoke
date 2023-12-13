@@ -19,16 +19,16 @@ trait TransformField
         if (isset($paDataField['startdt'])) {
 
             // $startdt = $dataField['meetingdt'].' '.$dataField['startdt'].':00'; 
-            $startdt = $dataField['startdt'];
-            $dataField['startdt'] = ConvertDate::strDateToDate($startdt);
+            $startdt = $dataField['startdt'] . ' 00:00:00';
+            $dataField['startdt'] = ConvertDate::strDatetimeToDate($startdt);
 
         }
 
         if (isset($paDataField['enddt'])) {
 
             // $enddt = $dataField['meetingdt'].' '.$dataField['enddt'].':00'; 
-            $enddt = $dataField['enddt']; 
-            $dataField['enddt'] = ConvertDate::strDateToDate($enddt);
+            $enddt = $dataField['enddt'] . ' 00:00:00';
+            $dataField['enddt'] = ConvertDate::strDatetimeToDate($enddt);
 
         }
 

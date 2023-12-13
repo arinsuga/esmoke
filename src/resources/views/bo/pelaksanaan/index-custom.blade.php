@@ -50,11 +50,11 @@
                     </a>
                 </li> -->
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('pelaksanaan.index.cancel') }}" style="font-weight: bold;">
                         Cancel
                     </a>
-                </li>
+                </li> -->
 
                 <li class="nav-item" style="border-bottom: 5px solid red;">
                     <a class="nav-link" href="{{ route('pelaksanaan.index.custom') }}" style="font-weight: bold;">

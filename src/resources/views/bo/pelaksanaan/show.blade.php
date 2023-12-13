@@ -39,14 +39,14 @@
 </li> -->
 
 <!-- button cancel -->
-<li class="nav-item">
+<!-- <li class="nav-item">
 
     <a  onclick="event.preventDefault();"
         data-toggle="modal" data-target="#modal-cancel"
         class="nav-link" href="#"
     ><span style="font-weight: bold;">Cancel</span></a>
 
-</li>
+</li> -->
 
 <!-- button edit -->
 <li class="nav-item">
