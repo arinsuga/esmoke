@@ -25,9 +25,7 @@
 <form role="form" id="frmData" method="POST" action="{{ route('pelaksanaan.store') }}" enctype="multipart/form-data">
     @csrf
 
-    <div style="display: flex; justify-content=center;">
-        @include('bo.pelaksanaan.data-field-items')
-    </div>
+    @include('bo.pelaksanaan.data-field-items')
 </form>
 
 @endsection

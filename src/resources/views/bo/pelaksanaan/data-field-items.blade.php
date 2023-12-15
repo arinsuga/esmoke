@@ -20,7 +20,7 @@
 margin-left: auto; margin-right:auto;">
     <div class="card-body">
 
-        <input type="text" name="exception" id="exception" value="0">
+        <input type="hidden" name="exception" id="exception" value="0">
         <div class="form-group">
             <label>Nama Karyawan</label>
             @if ($fieldEnabled == true)
