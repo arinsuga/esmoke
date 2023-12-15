@@ -27,18 +27,21 @@ class DatabaseSeederEsmoke extends Seeder
         $this->call('EmpstatusTableSeeder');
         $this->call('EmptypeTableSeeder');
         $this->call('InactivetypeTableSeeder');
-        $this->call('JobTableSeeder');
-        $this->call('SuperiorTableSeeder');
-        $this->call('BranchTableSeeder');
-        $this->call('DeptTableSeeder');
-        $this->call('SubdeptTableSeeder');
-        $this->call('BizunitTableSeeder');
-        $this->call('LevelTableSeeder');
         $this->call('GenderTableSeeder');
         $this->call('BloodtypeTableSeeder');
         $this->call('ReligionTableSeeder');
         $this->call('NationalityTableSeeder');
         $this->call('EducationTableSeeder');
+
+        //Not Mandatory basic
+        // $this->call('JobTableSeeder');
+        // $this->call('SuperiorTableSeeder');
+        // $this->call('BranchTableSeeder');
+        // $this->call('DeptTableSeeder');
+        // $this->call('SubdeptTableSeeder');
+        // $this->call('BizunitTableSeeder');
+        // $this->call('LevelTableSeeder');
+
 
         //esmoke
         $this->call('StatuskegiatanTableSeeder');

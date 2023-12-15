@@ -1,3 +1,15 @@
+@if ($errors->first('custom') !== '')
+
+<div class="alert alert-danger alert-dismissible" style="width: 50%;">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+    <p>{{$errors->first('custom')}}</p>
+    <p>Apakah tetap akan di proses?</p>
+    <button id="btnException">Ya</button>
+</div>
+
+@endif
+
 @php (($fieldEnabled == true ? $disabled='' : $disabled='disabled'))
 
 @if (isset($viewModel->data->id))
@@ -8,6 +20,7 @@
 margin-left: auto; margin-right:auto;">
     <div class="card-body">
 
+        <input type="text" name="exception" id="exception" value="0">
         <div class="form-group">
             <label>Nama Karyawan</label>
             @if ($fieldEnabled == true)

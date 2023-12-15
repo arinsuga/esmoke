@@ -47,6 +47,7 @@ class CreatePelaksanaanTable extends Migration
             $table->bigInteger('endusersubdept_id')->nullable();
 
             $table->string('image')->nullable();
+            $table->integer('exception')->default(0);
 
             $table->timestamps();
             $table->string('created_by')->nullable();

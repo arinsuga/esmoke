@@ -29,6 +29,7 @@ class Pelaksanaan extends Model
         'enduserdept_id',
         'endusersubdept_id',
         'image',
+        'exception',
         'created_by',
         'updated_by',
     ];

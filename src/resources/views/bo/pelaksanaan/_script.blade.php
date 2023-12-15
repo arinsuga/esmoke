@@ -34,9 +34,16 @@ $(document).ready(function() {
 
         $('#btnSubmit').click(function() {
             event.preventDefault();
+            $('#exception').val(0);
             document.getElementById('frmData').submit();
         })
         
+        $('#btnException').click(function() {
+            event.preventDefault();
+            $('#exception').val(1);
+            document.getElementById('frmData').submit();
+        });
+
     } else {
         $('#btnSubmit').hide();
     }

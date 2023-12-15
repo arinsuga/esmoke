@@ -32,6 +32,7 @@ class PelaksanaanRepository extends BaseRepository implements PelaksanaanReposit
             'enduserdept_id' => null,
             'endusersubdept_id' => null,
             'image' => null,
+            'exception' => null,
             'created_by' => null,
             'updated_by' => null,
         ];
@@ -99,15 +100,6 @@ class PelaksanaanRepository extends BaseRepository implements PelaksanaanReposit
             $data1 = $data1->get();
             $data2 = $data2->get();
             $data3 = $data3->get();
-
-
-            // return dd([
-            //     "startdt" => $startdt,
-            //     "enddt" => $enddt,
-            //     "data1" =>count($data1),
-            //     "data2" => count($data2),
-            //     "data3" => count($data3),
-            // ]);
 
             $result = count($data1);
             if ($result <= 0) {

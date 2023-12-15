@@ -24,18 +24,24 @@ trait ValidateInput
         } //end if validator
 
         //Custom validation
+        $exception = $data['exception'];
         $employee_id = $data['employee_id'];
         $startdt = $data['startdt'];
         $enddt = $data['enddt'];
-        $validationData = $this->data->existEmployeeStartEnd($employee_id, $startdt, $enddt);
-        if ( ($validationData < 0) || ($validationData > 0) ) {
 
-            $result = false;
-            if ($validationData > 0) {
+        if ($exception < 1) {
 
-                $this->validator->errors()
-                ->add('custom', 'Karyawan sudah ada kegiatan pada periode '
-                . Formater::date($startdt) . ' s/d ' . Formater::date($enddt));
+            $validationData = $this->data->existEmployeeStartEnd($employee_id, $startdt, $enddt);
+            if ( ($validationData < 0) || ($validationData > 0) ) {
+
+                $result = false;
+                if ($validationData > 0) {
+
+                    $this->validator->errors()
+                    ->add('custom', 'Karyawan sudah ada kegiatan pada periode '
+                    . Formater::date($startdt) . ' s/d ' . Formater::date($enddt));
+
+                } //end if
 
             } //end if
 
@@ -57,23 +63,29 @@ trait ValidateInput
         } //end if validator
 
         //Custom validation
+        $exception = $data['exception'];
         $pelaksanaanId = $id;
         $employee_id = $data['employee_id'];
         $startdt = $data['startdt'];
         $enddt = $data['enddt'];
-        $validationData = $this->data->existEmployeeStartEnd($employee_id, $startdt, $enddt, $id);
-        if ( ($validationData < 0) || ($validationData > 0) ) {
 
-            $result = false;
-            if ($validationData > 0) {
+        if ($exception < 1) {
 
-                $this->validator->errors()
-                ->add('custom', 'Karyawan sudah ada kegiatan pada periode ' . $data['startdt'] . ' s/d ' . $data['enddt']);
+            $validationData = $this->data->existEmployeeStartEnd($employee_id, $startdt, $enddt, $id);
+            if ( ($validationData < 0) || ($validationData > 0) ) {
+
+                $result = false;
+                if ($validationData > 0) {
+
+                    $this->validator->errors()
+                    ->add('custom', 'Karyawan sudah ada kegiatan pada periode '
+                    . Formater::date($startdt) . ' s/d ' . Formater::date($enddt));
+
+                } //end if
 
             } //end if
 
         } //end if
-
         return $result;
     }
 
