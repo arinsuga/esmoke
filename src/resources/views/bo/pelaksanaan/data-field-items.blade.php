@@ -1,7 +1,7 @@
 @php (($fieldEnabled == true ? $disabled='' : $disabled='disabled'))
 
 @if (isset($viewModel->data->id))
-    <input type="text" name="id" id="id" value="{{ $viewModel->data->id }}">
+    <input type="hidden" name="id" id="id" value="{{ $viewModel->data->id }}">
 @endif
 
 <div class="card" style="margin-bottom: 20px; width: 50%;

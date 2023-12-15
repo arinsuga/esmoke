@@ -30,9 +30,13 @@ class CreatePelaksanaanTable extends Migration
             $table->text('resolution')->nullable();
 
 
-            $table->dateTime('startdt')->nullable();
-            $table->dateTime('enddt')->nullable();
-            $table->dateTime('targetdt')->nullable();
+            // $table->dateTime('startdt')->nullable();
+            // $table->dateTime('enddt')->nullable();
+            // $table->dateTime('targetdt')->nullable();
+
+            $table->date('startdt')->nullable();
+            $table->date('enddt')->nullable();
+            $table->date('targetdt')->nullable();
 
             $table->bigInteger('employee_id')->nullable();
             $table->bigInteger('employeedept_id')->nullable();

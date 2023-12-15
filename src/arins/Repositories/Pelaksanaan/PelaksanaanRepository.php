@@ -38,7 +38,7 @@ class PelaksanaanRepository extends BaseRepository implements PelaksanaanReposit
 
         $this->validateInput = [
             'kegiatan_id' => 'required',
-            'subject' => 'required',
+            // 'subject' => 'required',
             'startdt' => 'required',
             'enddt' => 'required',
             'employee_id' => 'required',
@@ -68,32 +68,54 @@ class PelaksanaanRepository extends BaseRepository implements PelaksanaanReposit
             //id
             $data1 = $this->model::where('employee_id', $employeeId);
             $data2 = $this->model::where('employee_id', $employeeId);
+            $data3 = $this->model::where('employee_id', $employeeId);
 
             //statuspelaksanaan_id
-            $data1 = $data1->where('statuspelaksanaan_id', '!=', $statuspelaksanaan_id);
-            $data2 = $data2->where('statuspelaksanaan_id', '!=', $statuspelaksanaan_id);
+            $data1 = $data1->where('statuspelaksanaan_id', $statuspelaksanaan_id);
+            $data2 = $data2->where('statuspelaksanaan_id', $statuspelaksanaan_id);
+            $data3 = $data3->where('statuspelaksanaan_id', $statuspelaksanaan_id);
 
             if ($pelaksanaanId != null) {
 
-                $data1 = $data1->where('id', $pelaksanaanId);
-                $data2 = $data2->where('id', $pelaksanaanId);
+                $data1 = $data1->where('id', '!=', $pelaksanaanId);
+                $data2 = $data2->where('id', '!=', $pelaksanaanId);
+                $data3 = $data3->where('id', '!=', $pelaksanaanId);
     
             }
 
             //startdt
             $data1 = $data1->where('startdt', '<=', $startdt);
             $data1 = $data1->where('enddt', '>=', $startdt);
-            // $data1 = $data1->where('enddt', '>=', $startdt);
+
             //enddt
             $data2 = $data2->where('startdt', '<=', $enddt);
             $data2 = $data2->where('enddt', '>=', $enddt);
 
+            //startdt - enddt
+            $data3 = $data3->where('startdt', '>=', $startdt);
+            $data3 = $data3->where('enddt', '<=', $enddt);
+
+
             $data1 = $data1->get();
             $data2 = $data2->get();
+            $data3 = $data3->get();
+
+
+            // return dd([
+            //     "startdt" => $startdt,
+            //     "enddt" => $enddt,
+            //     "data1" =>count($data1),
+            //     "data2" => count($data2),
+            //     "data3" => count($data3),
+            // ]);
+
             $result = count($data1);
             if ($result <= 0) {
                 
                 $result = count($data2);
+                if ($result <= 0) {
+                    $result = count($data3);
+                } //end if
     
             } //end if
     
