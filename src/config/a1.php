@@ -29,7 +29,7 @@ return [
         'website' => 'https:/esmoke.com/',
         'address' => [
             'street1' => 'Gedung tinggi lt 9 kav 12',
-            'street2' => 'Jl. Gatot Raya Gatot Kaca',
+            'street2' => 'Jl. Raya Utama Jaya',
             'city' => 'DKI Jakarta'
         ],
         'copyright' => '2023',
