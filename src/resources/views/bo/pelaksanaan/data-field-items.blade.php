@@ -109,7 +109,7 @@ margin-left: auto; margin-right:auto;">
       <!-- textarea -->
       <div class="form-group">
         <label>Keterangan</label>
-        <textarea {{ $disabled }} id="subject" name="subject" class="form-control" rows="3" placeholder="">{{ ( $errors->any() ? old('subject') : $viewModel->data->subject ) }}</textarea>
+        <textarea rows="5" {{ $disabled }} id="subject" name="subject" class="form-control" rows="3" placeholder="">{{ ( $errors->any() ? old('subject') : $viewModel->data->subject ) }}</textarea>
         <p class="text-red">{{ $errors->first('subject') }}</p>
       </div>
 

@@ -6,6 +6,15 @@
     // });
     //CKEDITOR.replace( 'description' );
 
+    // ClassicEditor
+    //     .create( document.querySelector( '#subject' ), {
+    //         toolbar: []
+    //     })
+    //     .catch( error => {
+    //         console.error( error );
+    //     } );
+
+
     /** startdt tidak diformat lagi ke format iso
      *  karena output sudah otomatis format iso
      *  HH:mm
